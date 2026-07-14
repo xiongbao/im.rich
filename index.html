@@ -1,0 +1,67 @@
+
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>I'm Rich</title>
+<style>
+body{margin:0;font-family:Inter,system-ui;background:#0b0b0d;color:#eee}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem}
+h1{font-size:clamp(4rem,12vw,8rem);margin:.2em 0}
+.sub{color:#999;max-width:700px}
+.btn{display:inline-block;margin-top:2rem;padding:14px 28px;border:1px solid #444;border-radius:999px;color:#fff;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:60px;max-width:1200px;margin:auto}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.card.span-2{grid-column:span 2}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.card.span-2{grid-column:auto}}
+.card{background:rgba(255,255,255,.04);border:1px solid #222;border-radius:18px;padding:22px;backdrop-filter:blur(10px)}
+.card h3{margin:0 0 10px}
+.value{font-size:2rem;font-weight:700}
+footer{text-align:center;color:#777;padding:60px}
+.section{padding:20px 0}
+hr{border:none;border-top:1px solid #222}
+</style></head><body>
+<section class="hero">
+<div>
+<div style="letter-spacing:.4em;color:#777">IM.RICH</div>
+<h1>I'm Rich.</h1>
+<p class="sub">Not financially. Just in all the places nobody can pay rent with.</p>
+<a class="btn" href="#assets">View My Assets</a>
+</div>
+</section>
+<hr>
+<section id="assets" class="section">
+<div class="grid">
+<div class="card"><h3>Net Worth</h3><div class="value">$0.00</div><small>Adjusted for inflation: still $0</small></div>
+<div class="card"><h3>Domain Collection</h3><div class="value">147</div><small>Revenue: $0 · Hope: Unlimited</small></div>
+<div class="card"><h3>GitHub Stars</h3><div class="value">1846</div><small>Cannot be exchanged for food.</small></div>
+<div class="card"><h3>Browser Tabs</h3><div class="value">427</div><small>Long-term investment.</small></div>
+<div class="card"><h3>AI Prompts</h3><div class="value">17329</div><small>Mostly asking AI how to become successful.</small></div>
+<div class="card"><h3>Unread Emails</h3><div class="value">23481</div><small>Growing faster than Bitcoin.</small></div>
+<div class="card"><h3>Luxury Lifestyle</h3><p>Private Jet: Window seat.<br>Ocean View: Wallpaper.<br>Chef: Instant noodles.</p></div>
+<div class="card"><h3>Achievements</h3><p>Top 0.1% Overthinking<br>Bought High. Sold Low.<br>Opened productivity apps instead of working.</p></div>
+<div class="card span-2"><h3>Balance Sheet</h3><p><b>Assets</b>: Hope, Dreams, PDFs<br><b>Liabilities</b>: Rent, Taxes, Existential Crisis</p></div>
+</div>
+</section>
+<footer>
+<h2>The richest thing I own is optimism.</h2>
+<p>Unfortunately, my landlord only accepts money.</p>
+<p>© im.rich · All assets shown are imaginary.</p>
+</footer>
+<script>
+const quotes=[
+"Wealth is temporary. Cached files are forever.",
+"Money talks. Mine usually says goodbye.",
+"Success is just failure with better typography.",
+"I own many ideas. Most of them are unpaid."
+];
+const p=document.createElement('p');
+p.style.color='#666';p.textContent=quotes[Math.floor(Math.random()*quotes.length)];
+document.querySelector('footer').appendChild(p);
+let typed="";
+addEventListener("keydown",e=>{
+ typed+=(e.key||"").toLowerCase();
+ typed=typed.slice(-5);
+ if(typed==="money"){
+ document.querySelectorAll(".value").forEach(v=>v.textContent="$0.00");
+ alert("Congratulations. You are now richer by two decimal places.");
+ }
+});
+</script>
+</body></html>
